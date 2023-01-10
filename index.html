@@ -38,7 +38,7 @@
             Full Stack Developer & UI/UX Designer.
           </span>
         </h1>
-        <button type="button" class="rounded-pill btn-rounded">Say Hello
+       <button type="button" class="rounded-pill btn-rounded"><a href="#footer">    Say Hello</a>
           <span><i class="fas fa-arrow-right"></i></span>
         </button>
       </div>
@@ -272,24 +272,23 @@
       <div class="col-12 col-lg-6 bg-white shadow p-3">
         <div class="form w-100 pb-2">
          
-          <form action="#" class="row">
-            <div class="col-lg-6 col-md mb-3">
-              <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
-            </div>
-            <div class="col-lg-6 col-md mb-3">
-              <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
-            </div>
-            <div class="col-lg-12 mb-3">
-              <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
-            </div>
-            <div class="col-lg-12 mb-3">
-              <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
-            </div>
-            <div class="text-center d-grid mt-1">
-              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3">
-                submit
-                <i class="fas fa-paper-plane"></i>
-              </button>
+         <textarea id="myText" rows="15" cols="50" maxlength="50">
+send me here</textarea>
+<br>
+
+<input type="button" onclick="sendMail(); return false" style="background-color:black;color:white;width:150px;height:40px;" value="Send">
+             
+              
+              <script>  
+function sendMail() {
+    var link = "mailto:me@example.com"
+             + "?cc=myCCaddress@example.com"
+             + "&subject=" + encodeURIComponent("This is my subject")
+             + "&body=" + encodeURIComponent(document.getElementById('myText').value)
+    ;
+    
+    window.location.href = link;
+} </script>
             </div>
           </form>
         </div>
@@ -370,6 +369,7 @@
       </div>
     </div>
   </div>
+    <footer id="footer"></footer>
 </footer>    
     </script>
      <script src="assets/js/bootstrap.bundle.min.js"></script>
